@@ -43,6 +43,13 @@ module NewCallacon
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    # Don't generate test files for helpers, stylesheets, views or requests
+    config.generators.helper = false
+    config.generators.stylesheets = false
+    config.generators.view_specs = false
+    config.generators.request_specs = false
+    config.generators.controller_specs = true
+
     # Don't generate system test files.
     config.generators.system_tests = nil
   end
