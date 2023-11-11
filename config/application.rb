@@ -52,5 +52,8 @@ module NewCallacon
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Use UUIDs as primary keys
+    config.generators.orm :active_record, primary_key_type: :uuid
   end
 end
