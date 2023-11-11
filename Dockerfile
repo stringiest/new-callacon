@@ -33,6 +33,9 @@ COPY . .
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
+# Install dartsass-rails before precompile assets
+RUN ./bin/rails dartsass:install
+
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
 # RUN if [ "${RAILS_ENV}" != "development" ]; then \
   # SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile; fi

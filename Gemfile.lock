@@ -84,6 +84,9 @@ GEM
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crass (1.0.6)
+    dartsass-rails (0.5.0)
+      railties (>= 6.0.0)
+      sass-embedded (~> 1.63)
     date (3.3.4)
     debug (1.8.0)
       irb (>= 1.5.0)
@@ -99,6 +102,7 @@ GEM
     erubis (2.7.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    google-protobuf (3.25.0-x86_64-linux)
     haml (6.2.3)
       temple (>= 0.8.2)
       thor
@@ -219,6 +223,8 @@ GEM
     ruby2_keywords (0.0.5)
     ruby_parser (3.20.3)
       sexp_processor (~> 4.16)
+    sass-embedded (1.69.5-x86_64-linux-gnu)
+      google-protobuf (~> 3.23)
     sexp_processor (4.17.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
@@ -256,6 +262,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  dartsass-rails
   debug
   dotenv-rails
   haml-rails
