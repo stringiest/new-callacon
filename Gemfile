@@ -66,3 +66,7 @@ group :development do
 
 end
 
+group :test do
+  # Use RSpec
+  gem "rspec-rails"
+end
