@@ -1,0 +1,18 @@
+# This is the configuration used to check the rubocop source code.
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/**/*'
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'tmp/**/*'
+    - '.git/**/*'
+    - 'bin/*'
+  TargetRubyVersion: 3.2
+  SuggestExtensions: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/environments/development.rb'
+    

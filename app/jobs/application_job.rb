@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Base class for all jobs in the app
 class ApplicationJob < ActiveJob::Base
   # Automatically retry jobs that encountered a deadlock
   # retry_on ActiveRecord::Deadlocked
