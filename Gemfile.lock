@@ -95,6 +95,7 @@ GEM
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
+    erubis (2.7.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     haml (6.2.3)
@@ -106,6 +107,11 @@ GEM
       activesupport (>= 5.1)
       haml (>= 4.0.6)
       railties (>= 5.1)
+    html2haml (2.3.0)
+      erubis (~> 2.7.0)
+      haml (>= 4.0)
+      nokogiri (>= 1.6.0)
+      ruby_parser (~> 3.5)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.2.3)
@@ -193,6 +199,9 @@ GEM
     reline (0.4.0)
       io-console (~> 0.5)
     ruby2_keywords (0.0.5)
+    ruby_parser (3.20.3)
+      sexp_processor (~> 4.16)
+    sexp_processor (4.17.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -232,6 +241,7 @@ DEPENDENCIES
   debug
   dotenv-rails
   haml-rails
+  html2haml
   importmap-rails
   jbuilder
   pg (~> 1.1)

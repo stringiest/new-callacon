@@ -46,6 +46,7 @@ gem "bootsnap", require: false
 
 # Use HAML rather than .erb for views
 gem "haml-rails"
+gem "html2haml"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
