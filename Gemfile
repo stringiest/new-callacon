@@ -64,6 +64,8 @@ group :development, :test do
 end
 
 group :development do
+  # Check for code vulnerabilities
+  gem 'brakeman'
   # Check for library vulnerabilities
   gem 'bundler-audit'
   # Use console on exceptions pages [https://github.com/rails/web-console]
