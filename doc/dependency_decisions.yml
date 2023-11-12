@@ -1,0 +1,146 @@
+---
+- - :permit
+  - MIT
+  - &1
+    :who:
+    :why:
+    :versions: []
+    :when: 2023-11-12 17:04:31.876554728 Z
+- - :permit
+  - MIT*
+  - *1
+- - :permit
+  - ruby
+  - *1
+- - :permit
+  - Apache 2.0
+  - *1
+- - :permit
+  - ISC
+  - *1
+- - :permit
+  - BSD
+  - *1
+- - :permit
+  - Simplified BSD
+  - *1
+- - :permit
+  - New BSD
+  - *1
+- - :permit
+  - BSD-3-Clause
+  - *1
+- - :permit
+  - 0BSD
+  - *1
+- - :permit
+  - BSD*
+  - *1
+- - :permit
+  - Unlicense
+  - *1
+- - :permit
+  - CC0-1.0
+  - *1
+- - :permit
+  - CC-BY-3.0
+  - *1
+- - :permit
+  - CC-BY-4.0
+  - *1
+- - :permit
+  - WTFPL
+  - *1
+- - :permit
+  - Brakeman Public Use License
+  - *1
+- - :license
+  - amdefine
+  - MIT
+  - :who:
+    :why:
+    :versions: []
+    :when: 2023-11-12 17:05:47.472778665 Z
+- - :license
+  - amdefine
+  - BSD-3-Clause
+  - :who:
+    :why:
+    :versions: []
+    :when: 2023-11-12 17:08:21.571091565 Z
+- - :license
+  - atob
+  - MIT
+  - :who:
+    :why:
+    :versions: []
+    :when: 2023-11-12 17:09:01.726360340 Z
+- - :license
+  - atob
+  - Apache-2.0
+  - :who:
+    :why:
+    :versions: []
+    :when: 2023-11-12 17:09:59.096087511 Z
+- - :license
+  - node-forge
+  - BSD-3-Clause
+  - :who:
+    :why:
+    :versions: []
+    :when: 2023-11-12 17:10:23.399926745 Z
+- - :license
+  - node-forge
+  - GPL-2.0
+  - :who:
+    :why:
+    :versions: []
+    :when: 2023-11-12 17:10:46.783517493 Z
+- - :license
+  - pako
+  - MIT
+  - :who:
+    :why:
+    :versions: []
+    :when: 2023-11-12 17:11:35.000732959 Z
+- - :license
+  - pako
+  - Zlib
+  - :who:
+    :why:
+    :versions: []
+    :when: 2023-11-12 17:11:47.198124646 Z
+- - :license
+  - path-is-inside
+  - WTFPL
+  - :who:
+    :why:
+    :versions: []
+    :when: 2023-11-12 17:12:09.400262389 Z
+- - :license
+  - path-is-inside
+  - MIT
+  - :who:
+    :why:
+    :versions: []
+    :when: 2023-11-12 17:12:16.361008358 Z
+- - :license
+  - sha.js
+  - MIT
+  - :who:
+    :why:
+    :versions: []
+    :when: 2023-11-12 17:12:37.510312934 Z
+- - :license
+  - sha.js
+  - BSD-3-Clause
+  - :who:
+    :why:
+    :versions: []
+    :when: 2023-11-12 17:12:51.900360990 Z
+- - :approve
+  - bundler-audit
+  - :who:
+    :why:
+    :versions: []
+    :when: 2023-11-12 17:13:39.482711872 Z
