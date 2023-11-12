@@ -23,7 +23,7 @@ Bundler.require(*Rails.groups)
 # Load dotenv only in development or test environment
 Dotenv::Railtie.load if %w[development test].include? ENV['RAILS_ENV']
 
-HOSTNAME = ENV.fetch('HOSTNAME')
+HOSTNAME = ENV['HOSTNAME']
 
 module NewCallacon
   # Base class for application
