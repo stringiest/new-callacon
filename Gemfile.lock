@@ -82,6 +82,9 @@ GEM
     bootsnap (1.17.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    bundler-audit (0.9.1)
+      bundler (>= 1.2.0, < 3)
+      thor (~> 1.0)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crass (1.0.6)
@@ -246,6 +249,10 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.30.0)
       parser (>= 3.2.1.0)
+    rubocop-rails (2.22.1)
+      activesupport (>= 4.2.0)
+      rack (>= 1.1)
+      rubocop (>= 1.33.0, < 2.0)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     ruby_parser (3.20.3)
@@ -290,6 +297,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bundler-audit
   dartsass-rails
   debug
   dotenv-rails
@@ -303,6 +311,7 @@ DEPENDENCIES
   rspec-its
   rspec-rails
   rubocop
+  rubocop-rails
   sprockets-rails
   stimulus-rails
   turbo-rails

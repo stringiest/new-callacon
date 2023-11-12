@@ -4,12 +4,12 @@ require: rubocop-rails
 AllCops:
   NewCops: enable
   Exclude:
-    - 'db/**/*'
-    - 'vendor/**/*'
-    - 'spec/fixtures/**/*'
-    - 'tmp/**/*'
-    - '.git/**/*'
-    - 'bin/*'
+    - db/**/*
+    - vendor/**/*
+    - spec/fixtures/**/*
+    - tmp/**/*
+    - .git/**/*
+    - bin/*
     - node_modules/**/*
   TargetRubyVersion: 3.2
   SuggestExtensions: false
@@ -28,9 +28,7 @@ Layout/HashAlignment:
 
 Layout/LineLength:
   IgnoreCopDirectives: true
-
-Layout/LineLength:
-  IgnoredPatterns:
+  AllowedPatterns:
     - '^\s*# '
 
 Layout/ParameterAlignment:
