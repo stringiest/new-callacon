@@ -1,4 +1,5 @@
 # This is the configuration used to check the rubocop source code.
+require: rubocop-rails
 
 AllCops:
   NewCops: enable
@@ -9,10 +10,54 @@ AllCops:
     - 'tmp/**/*'
     - '.git/**/*'
     - 'bin/*'
+    - node_modules/**/*
   TargetRubyVersion: 3.2
   SuggestExtensions: false
 
+Style/Documentation:
+  Enabled: false
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/HashAlignment:
+  EnforcedLastArgumentHashStyle: ignore_implicit
+
+Layout/LineLength:
+  IgnoreCopDirectives: true
+
+Layout/LineLength:
+  IgnoredPatterns:
+    - '^\s*# '
+
+Layout/ParameterAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - "**/*_spec.rb"
+
 Metrics/BlockLength:
   Exclude:
-    - 'config/environments/development.rb'
-    
+    - Guardfile
+    - config/environments/*
+    - config/routes.rb
+    - "**/*_spec.rb"
+
+Metrics/MethodLength:
+  Exclude:
+    - "db/migrate/*.rb"
+
+Style/BlockDelimiters:
+  EnforcedStyle: braces_for_chaining
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/StringLiterals:
+  Exclude:
+    - lib/tasks/*.rake
+    - spec/**/*_spec.rb
