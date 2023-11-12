@@ -68,6 +68,7 @@ group :development do
   gem 'brakeman'
   # Check for library vulnerabilities
   gem 'bundler-audit'
+  gem 'license_finder'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 
