@@ -75,7 +75,7 @@ Rails.application.configure do
 
   # Set default url options - placeholder until set for production
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  
+
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.

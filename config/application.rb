@@ -23,7 +23,7 @@ Bundler.require(*Rails.groups)
 # Load dotenv only in development or test environment
 Dotenv::Railtie.load if %w[development test].include? ENV['RAILS_ENV']
 
-HOSTNAME = ENV['HOSTNAME']
+HOSTNAME = ENV.fetch('HOSTNAME', nil)
 
 module NewCallacon
   # Base class for application
@@ -47,7 +47,6 @@ module NewCallacon
     config.generators do |g|
       # use haml rather than erb
       g.template_engine :haml
-    
       # Don't generate test files for helpers, stylesheets, views or requests
       g.helper = false
       g.stylesheets = false
