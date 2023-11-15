@@ -44,17 +44,22 @@ module NewCallacon
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    # Don't generate test files for helpers, stylesheets, views or requests
-    config.generators.helper = false
-    config.generators.stylesheets = false
-    config.generators.view_specs = false
-    config.generators.request_specs = false
-    config.generators.controller_specs = true
+    config.generators do |g|
+      # use haml rather than erb
+      g.template_engine :haml
+    
+      # Don't generate test files for helpers, stylesheets, views or requests
+      g.helper = false
+      g.stylesheets = false
+      g.view_specs = false
+      g.request_specs = false
+      g.controller_specs = true
 
-    # Don't generate system test files.
-    config.generators.system_tests = nil
+      # Don't generate system test files.
+      g.system_tests = nil
 
-    # Use UUIDs as primary keys
-    config.generators.orm :active_record, primary_key_type: :uuid
+      # Use UUIDs as primary keys
+      g.orm :active_record, primary_key_type: :uuid
+    end
   end
 end
