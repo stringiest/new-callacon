@@ -1,0 +1,25 @@
+name: Lint and test
+on:
+  pull_request:
+    types: ["opened", "synchronize"]
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v3
+
+      - name: "Setup ruby"
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: "Bundle audit"
+        run: bundle exec bundle-audit
+
+      - name: "Brakeman audit"
+        run: bundle exec brakeman
+
+      - name: "License audit"
+        run: bundle exec license_finder
