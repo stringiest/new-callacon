@@ -61,6 +61,8 @@ jobs:
         env:
           POSTGRES_HOST: localhost
           RAILS_ENV: test
+          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
         run: bin/rails db:create db:schema:load
 
       - name: "Test with rspec"
@@ -68,6 +70,8 @@ jobs:
         env:
           POSTGRES_HOST: localhost
           RAILS_ENV: test
+          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
         run: bundle exec rspec
 
   audit:
