@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: test
     env:
-      app-dir: /rails
+      app-dir: /new-callacon
     needs: lint
     services:
       postgres:
