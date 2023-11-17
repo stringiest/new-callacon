@@ -23,6 +23,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    environment: test
     env:
       app-dir: /rails
     needs: lint
