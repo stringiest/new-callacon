@@ -22,7 +22,7 @@ default: &default
 development:
   <<: *default
   database: new_callacon_development
-  host: db
+  host: <%= ENV["POSTGRES_HOST"] %>
   username: <%= ENV["POSTGRES_USER"] %>
   password: <%= ENV["POSTGRES_PASSWORD"] %>
 
@@ -59,7 +59,7 @@ development:
 test:
   <<: *default
   database: new_callacon_test
-  host: db
+  host: <%= ENV["POSTGRES_HOST"] %>
   username: <%= ENV["POSTGRES_USER"] %>
   password: <%= ENV["POSTGRES_PASSWORD"] %>
 
