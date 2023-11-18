@@ -2,12 +2,22 @@
 %html
   %head
     %meta{ :content => 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }/
-    %title NewCallacon
+    %title Callacon
     %meta{ content: 'width=device-width,initial-scale=1', name: 'viewport' }/
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
   %body
+    %nav.navbar
+      - if current_user
+        Welcome, #{current_user.first_name}
+        %a.btn.btn-primary.ml-4.px-2.py-1{href: "/bookings"} Bookings
+        %a.btn.btn-primary.ml-4.px-2.py-1{href: "/bookings/new"} Make a booking
+        = link_to 'Sign Out', destroy_user_session_path, class: "btn btn-danger ml-4"
+      - else
+        Who are you?
+        = link_to 'Sign Up', new_user_registration_path, class: "btn btn-success mr-4"
+        = link_to 'Sign In', new_user_session_path, class: "btn btn-primary"
     - if notice
       %p.alert.alert-success= notice
     - if alert
