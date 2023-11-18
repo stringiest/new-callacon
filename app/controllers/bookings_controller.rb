@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class BookingsController < ApplicationController
-  before_action :find_booking, only: [:show, :edit, :update, :destroy]
+  before_action :find_booking, only: %i[show edit update destroy]
 
   def index
     @bookings = Booking.all
@@ -14,18 +14,18 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  def edit
+  end
+
   def create
     @booking = Booking.new(user_id: session[:user_id],
-                          arrival: params[:booking][:arrival],
-                          departure: params[:booking][:departure])
+      arrival: params[:booking][:arrival],
+      departure: params[:booking][:departure])
     if @booking.save
       redirect_to bookings_url
     else
       render 'new'
     end
-  end
-
-  def edit
   end
 
   def update
