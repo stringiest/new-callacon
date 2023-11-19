@@ -1,1 +1,19 @@
-%h1 My bookings
+%h1.text-center My bookings
+%table.table.table-striped
+  %thead
+    %tr
+      %th{ scope: 'col' } Event
+      %th{ scope: 'col' } Arrival Date
+      %th{ scope: 'col' } Departure Date
+      %th{ scope: 'col' } Actions
+  %tbody
+    - @bookings.reverse.each do |booking|
+      - next unless booking.user == current_user
+
+      %tr
+        %td Autumn 2024
+        %td= booking.arrival.strftime('%d/%m/%Y')
+        %td= booking.departure.strftime('%d/%m/%Y')
+        %td
+          = link_to 'Edit', edit_booking_path(booking), class: 'btn btn-primary'
+          = button_to 'Delete', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger ml-4'

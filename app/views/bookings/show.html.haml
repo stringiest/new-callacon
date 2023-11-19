@@ -1,0 +1,12 @@
+%h1.text-center Booking details
+#booking-container.card.my-5.mx-auto
+  %span.card-header
+    - if @booking.user == current_user
+      %span
+        = link_to 'Edit', edit_booking_path(@booking)
+        = button_to 'Delete', booking_path(@booking), method: :delete, data: { confirm: 'Are you sure?' }
+  %span.d-inline-flex
+    Arrival date:
+    %p.text-justify.m-2= @booking.arrival
+    Departure date:
+    %p.text-justify.m-2= @booking.departure
