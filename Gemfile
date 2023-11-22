@@ -62,6 +62,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'haml-lint', require: false
+  gem 'rails-controller-testing'
   gem 'rspec-its'
   gem 'rspec-rails'
   gem 'rubocop', require: false
