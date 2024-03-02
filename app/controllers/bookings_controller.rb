@@ -22,6 +22,7 @@ class BookingsController < ApplicationController
       arrival: params[:booking][:arrival],
       departure: params[:booking][:departure])
     if @booking.save
+      flash[:notice] = I18n.t('bookings_notices.create_success')
       redirect_to bookings_url
     else
       render 'new'
@@ -30,6 +31,7 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
+      flash[:notice] = I18n.t('bookings_notices.update_success')
       redirect_to bookings_url
     else
       render 'edit'
@@ -38,6 +40,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
+    flash[:notice] = I18n.t('bookings_notices.delete_success')
     redirect_to bookings_url
   end
 
