@@ -3,8 +3,12 @@
 require 'rails_helper'
 
 RSpec.describe Booking, type: :model do
-  let(:user) { FactoryBot.build(:basic_user) }
   let(:booking) { FactoryBot.build(:booking) }
+
+  before(context) do
+    @user = FactoryBot.create(:basic_user)
+    @user.confirm
+  end
 
   context 'valid booking' do
     it 'should be valid with arrival and departure dates' do
