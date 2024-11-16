@@ -19,6 +19,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(user_id: current_user.id,
+      event_id: params[:booking][:event_id],
       arrival: params[:booking][:arrival],
       departure: params[:booking][:departure])
     if @booking.save
