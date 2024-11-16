@@ -34,7 +34,7 @@ RSpec.describe "Events", type: :request do
 
     describe "Get /Edit" do
       it "should render edit page" do
-        get edit_event_path(booking.id)
+        get edit_event_path(event.id)
         expect(response).to render_template :edit
       end
     end
