@@ -33,3 +33,7 @@ en:
     create_success: "Booking has created successfully"
     update_success: "Booking has updated successfully"
     delete_success: "Booking has deleted successfully"
+  events_notices:
+    create_success: "Event has created successfully"
+    update_success: "Event has updated successfully"
+    delete_success: "Event has deleted successfully"  
