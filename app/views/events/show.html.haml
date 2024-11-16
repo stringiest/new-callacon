@@ -1,0 +1,8 @@
+%h1.text-center Event details
+#booking-container.card.my-5.mx-auto
+  %span.card-header
+    = link_to 'Edit', edit_event_path(@event)
+    = button_to 'Delete', event_path(@event), method: :delete, data: { confirm: 'Are you sure?' }
+  %span.d-inline-flex
+    Name:
+    %p.text-justify.m-2= @event.name
