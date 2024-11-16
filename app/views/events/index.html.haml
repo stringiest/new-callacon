@@ -6,6 +6,7 @@
       %th{ scope: 'col' } Actions
   %tbody
     - @events.reverse.each do |event|
+      - next unless current_user
 
       %tr
         %td= event.name
