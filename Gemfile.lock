@@ -114,7 +114,7 @@ GEM
     erubis (2.7.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    google-protobuf (3.25.1-x86_64-linux)
+    google-protobuf (3.25.5-x86_64-linux)
     haml (6.2.3)
       temple (>= 0.8.2)
       thor
