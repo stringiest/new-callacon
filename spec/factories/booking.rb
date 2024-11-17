@@ -7,5 +7,9 @@ FactoryBot.define do
 
     arrival { '15/10/2024' }
     departure { '19/10/2024' }
+    cancellable { false }
+    assistance_claim { false }
+    single_person { false }
+    dog { 1 }
   end
 end
