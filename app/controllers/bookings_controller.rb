@@ -2,6 +2,7 @@
 
 class BookingsController < ApplicationController
   before_action :find_booking, only: %i[show edit update destroy]
+  before_action :new_booking, only: :create
 
   def index
     @bookings = Booking.all
@@ -18,9 +19,6 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(user_id: current_user.id,
-      arrival: params[:booking][:arrival],
-      departure: params[:booking][:departure])
     if @booking.save
       flash[:notice] = I18n.t('bookings_notices.create_success')
       redirect_to bookings_url
@@ -52,5 +50,12 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:arrival, :departure)
+  end
+
+  def new_booking
+    @booking = Booking.new(user_id: current_user.id,
+      event_id: params[:booking][:event_id],
+      arrival: params[:booking][:arrival],
+      departure: params[:booking][:departure])
   end
 end

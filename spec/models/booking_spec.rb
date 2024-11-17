@@ -8,6 +8,7 @@ RSpec.describe Booking, type: :model do
   before(context) do
     @user = FactoryBot.create(:basic_user)
     @user.confirm
+    @event = FactoryBot.create(:event)
   end
 
   context 'valid booking' do

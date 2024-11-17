@@ -28,6 +28,7 @@ RSpec.describe "Bookings", type: :request do
     before(context) do
       @user = FactoryBot.create(:basic_user)
       @user.confirm
+      @event = FactoryBot.create(:event)
     end
 
     before(:each) do
@@ -43,13 +44,13 @@ RSpec.describe "Bookings", type: :request do
 
     describe "Post /Booking" do
       it "should create a booking with valid attributes" do
-        post '/bookings', params: { booking: FactoryBot.attributes_for(:booking, user_id: @user.id) }
+        post '/bookings', params: { booking: valid_attributes }
         expect(response).to redirect_to bookings_path
         expect(flash[:notice]).to eq 'Booking has created successfully'
       end
 
       it "should not create a booking with invalid attributes" do
-        post '/bookings', params: { booking: FactoryBot.attributes_for(:booking, user_id: @user.id, arrival: nil) }
+        post '/bookings', params: { booking: invalid_attributes }
         expect(response).to render_template :new
         expect(flash[:notice]).to eq nil
       end
@@ -76,5 +77,13 @@ RSpec.describe "Bookings", type: :request do
         expect(flash[:notice]).to eq 'Booking has deleted successfully'
       end
     end
+  end
+
+  def valid_attributes
+    FactoryBot.attributes_for(:booking, user_id: @user.id, event_id: @event.id)
+  end
+
+  def invalid_attributes
+    FactoryBot.attributes_for(:booking, user_id: @user.id, event_id: @event.id, arrival: nil)
   end
 end
