@@ -5,6 +5,11 @@
       %th{ scope: 'col' } Event
       %th{ scope: 'col' } Arrival Date
       %th{ scope: 'col' } Departure Date
+      %th{ scope: 'col' } Cancellable?
+      %th{ scope: 'col' } Assistance fund donation
+      %th{ scope: 'col' } Assistance fund claim
+      %th{ scope: 'col' } Single person supplement
+      %th{ scope: 'col' } No. dogs
       %th{ scope: 'col' } Actions
   %tbody
     - @bookings.reverse.each do |booking|
@@ -14,6 +19,11 @@
         %td Autumn 2024
         %td= booking.arrival.strftime('%d/%m/%Y')
         %td= booking.departure.strftime('%d/%m/%Y')
+        %td= booking.cancellable 
+        %td= booking.assistance_donate
+        %td= booking.assistance_claim
+        %td= booking.single_person
+        %td= booking.dog
         %td
           = link_to 'Edit', edit_booking_path(booking), class: 'btn btn-primary'
           = button_to 'Delete', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger ml-4'

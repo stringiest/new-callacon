@@ -1,8 +1,33 @@
 .card.mx-auto.text-center.px-4.pt-4.pb-3.mt-5
   = form_for booking do |f|
-    = f.collection_select :event_id, Event.order(:name), :id, :name
-    = f.label :arrival, 'Arrival Date'
-    = f.date_field :arrival, class: 'form-control mb-3'
-    = f.label :departure, 'Departure Date'
-    = f.date_field :departure, class: 'form-control mb-3'
+    %p
+      = f.collection_select :event_id, Event.order(:name), :id, :name
+      = f.label :arrival, 'Arrival Date'
+      = f.date_field :arrival, class: 'form-control mb-3'
+      = f.label :departure, 'Departure Date'
+      = f.date_field :departure, class: 'form-control mb-3'
+    %p
+      = f.label :cancellable, 'Do you want to make your booking cancellable for an extra 15%?'
+      = f.label :cancellable_true, 'Yes'
+      = f.radio_button :cancellable, 'true'
+      = f.label :cancellable_false, 'No'
+      = f.radio_button :cancellable, 'false'
+    %p
+      = f.label :assistance_donate, 'Would you like to make a donation to the assistance fund?'
+      = f.number_field :assistance_donate, class: 'form-control mb-3'
+    %p
+      = f.label :assistance_claim, 'Would you like to make a claim from the assistance fund?'
+      = f.label :assistance_claim_true, 'Yes'
+      = f.radio_button :assistance_claim, 'true'
+      = f.label :assistance_claim_false, 'No'
+      = f.radio_button :assistance_claim, 'false'
+    %p
+      = f.label :single_person, 'Would you to have a single room - £50 per night capped at £200?'
+      = f.label :single_person_true, 'Yes'
+      = f.radio_button :single_person, 'true'
+      = f.label :single_person_false, 'No'
+      = f.radio_button :single_person, 'false'
+    %p
+      = f.label :dog, 'Are you bringing a dog? Please indicate the number of dogs - £30 per dog'
+      = f.number_field :dog, class: 'form-control mb-3'
     = f.submit 'Submit', class: 'btn btn-success'
