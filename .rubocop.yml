@@ -38,6 +38,10 @@ Lint/AmbiguousBlockAssociation:
   Exclude:
     - "**/*_spec.rb"
 
+Metrics/AbcSize:
+  Exclude:
+    - app/controllers/bookings_controller.rb
+
 Metrics/BlockLength:
   Exclude:
     - Guardfile

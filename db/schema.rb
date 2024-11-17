@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_11_16_202827) do
+ActiveRecord::Schema[7.1].define(version: 2024_11_17_160817) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  # Custom types defined in this database.
+  # Note that some types may not work with other database engines. Be careful if changing database.
+  create_enum "assistance_claim", ["yes", "no"]
+  create_enum "cancellable", ["yes", "no"]
+  create_enum "single_person", ["yes", "no"]
 
   create_table "bookings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.date "arrival"
@@ -22,6 +28,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_16_202827) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.uuid "event_id", null: false
+    t.integer "assistance_donate"
+    t.integer "dog"
+    t.enum "cancellable", null: false, enum_type: "cancellable"
+    t.enum "assistance_claim", null: false, enum_type: "assistance_claim"
+    t.enum "single_person", null: false, enum_type: "single_person"
     t.index ["event_id"], name: "index_bookings_on_event_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

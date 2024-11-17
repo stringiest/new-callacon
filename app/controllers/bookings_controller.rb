@@ -49,13 +49,24 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:arrival, :departure)
+    params.require(:booking).permit(:arrival,
+      :departure,
+      :cancellable,
+      :assistance_donate,
+      :assistance_claim,
+      :single_person,
+      :dog)
   end
 
   def new_booking
     @booking = Booking.new(user_id: current_user.id,
       event_id: params[:booking][:event_id],
       arrival: params[:booking][:arrival],
-      departure: params[:booking][:departure])
+      departure: params[:booking][:departure],
+      cancellable: params[:booking][:cancellable],
+      assistance_donate: params[:booking][:assistance_donate],
+      assistance_claim: params[:booking][:assistance_claim],
+      single_person: params[:booking][:single_person],
+      dog: params[:booking][:dog])
   end
 end
