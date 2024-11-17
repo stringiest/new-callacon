@@ -10,15 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_11_17_160817) do
+ActiveRecord::Schema[7.1].define(version: 2024_11_17_145434) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
   # Custom types defined in this database.
   # Note that some types may not work with other database engines. Be careful if changing database.
-  create_enum "assistance_claim", ["yes", "no"]
-  create_enum "cancellable", ["yes", "no"]
   create_enum "chillout_house", ["yes", "no", "don't mind"]
   create_enum "dog_house", ["yes", "no", "don't mind"]
   create_enum "hot_tub_house", ["yes", "no", "don't mind"]
@@ -26,7 +24,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_17_160817) do
   create_enum "late_n_loud", ["yes", "no", "don't mind"]
   create_enum "massage_house", ["yes", "no", "don't mind"]
   create_enum "sharing_bed", ["double", "two singles"]
-  create_enum "single_person", ["yes", "no"]
 
   create_table "bookings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.date "arrival"
@@ -47,9 +44,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_17_160817) do
     t.string "sharing_with"
     t.enum "sharing_bed", enum_type: "sharing_bed"
     t.string "comments"
-    t.enum "cancellable", null: false, enum_type: "cancellable"
-    t.enum "assistance_claim", null: false, enum_type: "assistance_claim"
-    t.enum "single_person", null: false, enum_type: "single_person"
+    t.boolean "single_person"
+    t.boolean "assistance_claim"
+    t.boolean "cancellable"
     t.index ["event_id"], name: "index_bookings_on_event_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
