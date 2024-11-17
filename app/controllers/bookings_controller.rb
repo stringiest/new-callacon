@@ -55,7 +55,17 @@ class BookingsController < ApplicationController
       :assistance_donate,
       :assistance_claim,
       :single_person,
-      :dog)
+      :dog,
+      :lark_or_owl,
+      :massage_house,
+      :late_n_loud,
+      :chillout_house,
+      :dog_house,
+      :hot_tub_house,
+      :family_room,
+      :sharing_with,
+      :sharing_bed,
+      :comments)
   end
 
   def new_booking
@@ -67,6 +77,17 @@ class BookingsController < ApplicationController
       assistance_donate: params[:booking][:assistance_donate],
       assistance_claim: params[:booking][:assistance_claim],
       single_person: params[:booking][:single_person],
-      dog: params[:booking][:dog])
+      dog: params[:booking][:dog],
+      lark_or_owl: params[:booking][:lark_or_owl],
+      massage_house: params[:booking][:massage_house],
+      late_n_loud: params[:booking][:late_n_loud],
+      chillout_house: params[:booking][:chillout_house],
+      dog_house: params[:booking][:dog_house],
+      hot_tub_house: params[:booking][:hot_tub_house],
+      family_room: params[:booking][:family_room],
+      sharing_with: params[:booking][:sharing_with],
+      sharing_bed: params[:booking][:sharing_bed],
+      comments: params[:booking][:comments]
+      )
   end
 end
